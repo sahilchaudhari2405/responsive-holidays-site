@@ -79,9 +79,11 @@
     <script type="text/javascript">
       const menubtn = document.querySelector(".nav-toggler");
       const navigation = document.querySelector(".nav-manu");
+      const slider_nav = document.querySelector(".slider-navigation");
       menubtn.addEventListener("click", () => {
         menubtn.classList.toggle("active");
         navigation.classList.toggle("active");
+        slider_nav.classList.toggle("active");
       });
       const btns = document.querySelectorAll(".nav-btn");
       const slider = document.querySelectorAll(".back-video");
