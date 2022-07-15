@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <div class="navigation">
+        <img src="img/401-logo.png" class="logo" alt="" />
+        <div class="nav-manu">
+          <div class="nav-items">
+            <div class="nav-item-list"><a href="#">HOME</a></div>
+            <div class="nav-item-list"><a href="#">BEACHES</a></div>
+            <div class="nav-item-list"><a href="#">POPULAR PLACES</a></div>
+            <div class="nav-item-list"><a href="#">CONTACT US</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-toggler">
+        <span></span>
+      </div>
+      <section class="home">
+        <video autoplay loop muted plays-inline class="back-video active">
+          <source src="video/video.mp4" type="video/mp4" />
+        </video>
+        <video autoplay loop muted plays-inline class="back-video">
+          <source src="video/los-angeles.mp4" type="video/mp4" />
+        </video>
+        <video autoplay loop muted plays-inline class="back-video">
+          <source src="video/london.mp4" type="video/mp4" />
+        </video>
+        <video autoplay loop muted plays-inline class="back-video">
+          <source src="video/new york.mp4" type="video/mp4" />
+        </video>
+        <video autoplay loop muted plays-inline class="back-video">
+          <source src="video/video (4).mp4" type="video/mp4" />
+        </video>
+        <video autoplay loop muted plays-inline class="back-video">
+          <source src="video/toronto.mp4" type="video/mp4" />
+        </video>
+        <div class="content active">
+          <h1>California</h1>
+          <a href="#">Explore</a>
+        </div>
+        <div class="content">
+          <h1>Los Angeles</h1>
+          <a href="#">Weekation</a>
+        </div>
+        <div class="content">
+          <h1>London</h1>
+          <a href="#">Explore</a>
+        </div>
+        <div class="content">
+          <h1>New York</h1>
+          <a href="#">Explore</a>
+        </div>
+        <div class="content">
+          <h1>Miami</h1>
+          <a href="#">Explore</a>
+        </div>
+        <div class="content">
+          <h1>Toranto</h1>
+          <a href="#">Explore</a>
+        </div>
+        <div class="slider-navigation">
+          <div class="nav-btn active"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+          <div class="nav-btn"></div>
+        </div>
+      </section>
+    </div>
+    <script type="text/javascript">
+      const menubtn = document.querySelector(".nav-toggler");
+      const navigation = document.querySelector(".nav-manu");
+      menubtn.addEventListener("click", () => {
+        menubtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+      const btns = document.querySelectorAll(".nav-btn");
+      const slider = document.querySelectorAll(".back-video");
+      const contents = document.querySelectorAll(".content");
+      var sliderNav = function (manual) {
+        btns.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+        slider.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+        contents.forEach((content) => {
+          content.classList.remove("active");
+        });
+        btns[manual].classList.add("active");
+        slider[manual].classList.add("active");
+        contents[manual].classList.add("active");
+      };
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          sliderNav(i);
+        });
+      });
+    </script>
+  </body>
+</html>
